@@ -1,24 +1,24 @@
 
 
 pub enum SomethingOrNothing<T> {
-	Something(T), 
+	Something(T),
 	Nothing,
 }
 
 pub use self::SomethingOrNothing::*;
 
-type IntegerOrNothing = SomethingOrNothing<i32>;
+pub type IntegerOrNothing = SomethingOrNothing<i32>;
 
 impl<T> SomethingOrNothing<T> {
 	fn new(o:Option<T>) -> Self {
 		match o {
-			None => Nothing, 
+			None => Nothing,
 			Some(t) => Something(t)
  		}
 	}
 	fn to_option(self) -> Option<T> {
 		match self {
-			Nothing => None, 
+			Nothing => None,
 			Something(t) => Some(t)
 		}
 	}
