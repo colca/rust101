@@ -1,4 +1,5 @@
- pub struct BigInt {
+#[derive(Clone)]
+pub struct BigInt {
      pub data: Vec<u64>,
      pub num: u64
  }
